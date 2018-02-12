@@ -17,6 +17,45 @@ int main() {
 
   clear_screen(s);
 
+  int i = 1000;
+  int x = 0;
+  int y = 0;
+  while (i >= 0){
+    if (x == 0){
+      draw_line(250,250,x,y,s,c);
+      y += 2;
+    }
+    if (y == 500){
+      draw_line(250,250,x,y,s,c);
+      x += 2;
+    }
+    if (x == 500){
+      draw_line(250,250,x,y,s,c);
+      y -= 2;
+    }
+    if (y == 0){
+      draw_line(250,250,x,y,s,c);
+      x -= 2;
+    }
+
+    if (c.red < 255 && c.green > 0 && c.blue == 0){
+      c.red = c.red + 3;
+      c.green = c.green - 3;
+    }
+    else if(c.blue < 255 && c.red > 0 && c.green == 0){
+      c.blue = c.blue + 3;
+      c.red = c.red - 3;
+    }
+    else{
+      c.green = c.green + 3;
+      c.blue = c.blue - 3;
+    }
+    i--;      
+    
+  }
+
+  //scrapped design
+  /*
   int i = 500;
   
   int x = 250;
@@ -90,7 +129,7 @@ int main() {
     c.red++;
     j--;
   }
-  
+  */
     /*
   //test
   //Q1

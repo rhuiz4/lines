@@ -59,9 +59,38 @@ int main() {
     
     i--;
   }
-  
-  
 
+
+  
+  int sx0 = 250;
+  int sy0 = 350;
+  int sx1 = 250;
+  int sy1 = 350;
+  int j = 200;
+  c.red = 0;
+  c.green = MAX_COLOR*3/4;
+  c.blue = MAX_COLOR;
+  while (j >= 0){
+    if(sy0 >= 250){
+      draw_line(sx0,sy0,sx1,sy1,s,c);
+      sx0--;
+      sx1++;
+      sy0--;
+      sy1--;
+    }
+    else{
+      draw_line(sx0,sy0,sx1,sy1,s,c);
+      sx0++;
+      sx1--;
+      sy0--;
+      sy1--;
+
+    }
+    c.blue--;
+    c.red++;
+    j--;
+  }
+  
     /*
   //test
   //Q1

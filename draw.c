@@ -24,10 +24,10 @@ void draw_line(int x0, int y0, int x1, int y1, screen s, color c) {
   int B = x0 - x1;
   int x = x0;
   int y = y0;
-  float slope = (float)A/B * -1;
-
+  float  slope = (float)A/B * -1;
+  
   //Octant 2                                                                                                                                                                                              
-  if (slope >= 1){
+  if (slope >= 1 || !B){
     int d = A + 2 * B;
     while (y <= y1){
       plot (s, c, x, y);
